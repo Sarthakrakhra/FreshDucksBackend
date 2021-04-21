@@ -8,7 +8,11 @@ require("dotenv/config");
 // middlewares
 app.use(express.json());
 app.use(cors());
+
 //routes
+const ducksDataRoute = require("./routes/ducksDataRoute");
+app.use("/ducksData", ducksDataRoute);
+
 app.get("/", (req, res) => {
   res.status(200).send({ message: "default path works" });
 });
