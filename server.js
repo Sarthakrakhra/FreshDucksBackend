@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-require("dotenv/config");
+require("dotenv").config({ silent: process.env.NODE_ENV === "production" });
 
 // middlewares
 app.use(express.json());
