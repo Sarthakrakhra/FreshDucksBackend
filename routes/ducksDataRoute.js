@@ -12,6 +12,17 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
+router.get("/foodTypes", (req, res) => {
+  DuckData.distinct("foodsFed.food")
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("Error in receiving data");
+    });
+});
+
 router.post("/submitDuckData", (req, res) => {
   const {
     personName,
