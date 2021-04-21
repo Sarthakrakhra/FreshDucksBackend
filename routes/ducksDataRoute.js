@@ -41,7 +41,11 @@ router.post("/submitDuckData", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).send("Error in adding data");
+      res
+        .status(500)
+        .send(
+          "Error in adding data. Please make sure all fields are not empty"
+        );
     });
 });
 
