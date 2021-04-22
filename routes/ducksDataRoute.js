@@ -51,12 +51,17 @@ router.post("/submitDuckData", (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(err);
-      res
-        .status(500)
-        .send(
-          "Error in adding data. Please make sure all fields are not empty"
-        );
+      let errors = [];
+      for (const fieldName in err.errors) {
+        const typeOfError = err.errors[fieldName].kind;
+        errors.push(`${fieldName} is ${typeOfError}`);
+      }
+
+      res.status(500).json({
+        message:
+          "Error in adding data. Please make sure all fields are not empty",
+        errors,
+      });
     });
 });
 
