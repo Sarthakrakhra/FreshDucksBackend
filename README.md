@@ -1,6 +1,10 @@
 # FreshDucks Backend
 
-## Project setup
+This mini-project is developed as the backend for the Full-Stack Developer Test. You can find a working demo [here](https://freshducks-backend.herokuapp.com/)
+
+To run the application please look at the commands below. First thing you will want to do is execute the commands in the [Project Setup](#project-setup) section and then you can run the application by executing the command in the [Compiles and run application locally](#compile-and-run-application-locally) section.
+
+### Project setup
 
 To setup the project we first need to install all the main and development dependencies using the command:
 
